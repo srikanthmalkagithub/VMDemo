@@ -39,7 +39,7 @@ public class VMController {
        
     }
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/{item}")
+	@RequestMapping(method = RequestMethod.GET, value = "/items/{item}")
 	    long selectItemAndGetPrice(Item item) {
 		if(itemInventory.hasItem(item)){
             currentItem = item;
@@ -48,7 +48,7 @@ public class VMController {
 		return 0;
 	    }
 	 
-	@RequestMapping(method = RequestMethod.POST, value = "/{coin}")
+	@RequestMapping(method = RequestMethod.POST, value = "/coins/{coin}")
 	public void insertCoin(Coin coin)
 	{
 		currentBalance = currentBalance + coin.getDenomination();
@@ -56,7 +56,7 @@ public class VMController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "/refund")
+	@RequestMapping(method = RequestMethod.GET, value = "coins/refund")
 	public List<Coin> refund()
 	{
 		
